@@ -19,7 +19,8 @@ function addRest (restaurant, db = connection) {
       lat: restaurant.lat,
       long: restaurant.long,
       price_range: restaurant.priceRange,
-      image: restaurant.image
+      image: restaurant.image,
+      type: restaurant.type
     })
     .then((ids) => {
       return {
