@@ -11,9 +11,7 @@ const App = () => {
       <Route path='/' component={Title} />
       <Route exact path='/' component={Home} />
       
-      <Route path='/restaurants' render={() => {
-        return <View />
-      }} />
+      <Route path='/restaurants/:id' component={View} />
     </>
   )
 }
