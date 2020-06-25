@@ -6,7 +6,7 @@ import View from './View'
 const Home = () => {
   return (
     <div>
-      <h1>home</h1>
+      <h1>Area for image links</h1>
       <Link to={'/restaurants'}>Link to Restaurant</Link>
     </div>
   )
