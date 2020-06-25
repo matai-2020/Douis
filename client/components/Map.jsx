@@ -31,7 +31,7 @@ const Map = (props) => {
             </BaseLayer>
             <Marker position={position}>
               <Popup>
-              {/* {props.name} */}
+                {/* {props.name} */}
               </Popup>
 
             </Marker>

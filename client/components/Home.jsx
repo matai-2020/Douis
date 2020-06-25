@@ -5,21 +5,39 @@ import { getData } from '../api'
 
 export class Home extends React.Component {
     state = {
-      name: '',
-      image: ''
+      restaurants: []
     }
 
     componentDidMount () {
       getData()
         .then(dbData => {
           console.log('dbData on home page: ', dbData)
+          this.setState(
+            {
+              restaurants: dbData
+            }
+          )
         })
     }
 
     render () {
       return (
         <div>
-          <h1>Area for image links</h1>
+          <div>
+            <ul>
+              {this.state.restaurants.map(el => {
+                return (
+                  <li key={el.id}>
+                    <Link to={`restaurants/${el.id}`}>
+                      <img src={`images/${el.image}`} />
+                      <h3>{el.name}</h3>
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+
+          </div>
           <Link to={'/restaurants'}>Link to Restaurant</Link>
         </div>
       )
