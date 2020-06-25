@@ -1,0 +1,9 @@
+body {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: 'SF Comic Script Shaded', arial;
+  font-size: 48px;
+  text-shadow: 4px 4px 4px #aaa;
