@@ -3,9 +3,9 @@ exports.up = function (knex) {
   return knex.schema.createTable('restaurants', table => {
     table.increments('id')
     table.string('name')
-    table.string('rating')
-    table.string('lat')
-    table.string('long')
+    table.decimal('rating')
+    table.decimal('lat')
+    table.decimal('long')
     table.string('price_range')
     table.string('image')
   })

@@ -1,12 +1,19 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
 
 import Home from './Home'
+import Title from './Title'
+import View from './View'
 
 const App = () => {
   return (
     <>
-      <Home />
-      <h1>React development has begun!</h1>
+      <Route path='/' component={Title} />
+      <Route exact path='/' component={Home} />
+      
+      <Route path='/restaurants' render={() => {
+        return <View />
+      }} />
     </>
   )
 }
