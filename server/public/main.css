@@ -5,5 +5,19 @@ body {
 
 .title {
   font-family: 'SF Comic Script Shaded', arial;
-  font-size: 48px;
+  font-size: 40px;
   text-shadow: 4px 4px 4px #aaa;
+}
+
+.dewey {
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+}
+
+.dewey:hover {
+  -webkit-animation: swing 1s ease;
+  animation: swing 1s ease;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
