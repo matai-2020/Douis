@@ -13,8 +13,15 @@ router.get('/', (req, res) => {
 })
 
 // POST  /api/v1/
-router.post('/', (req, res) => {
-
+router.post('/add', (req, res) => {
+  const restaurant = req.body
+  db.addRest(restaurant)
+    .then(newRestaurant => {
+      res.json(newRestaurant)
+    })
+    .catch(err => {
+      res.status(500).send(err.message)
+    })
 })
 
 module.exports = router
