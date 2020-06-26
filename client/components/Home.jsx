@@ -11,7 +11,7 @@ export class Home extends React.Component {
     componentDidMount () {
       getData()
         .then(dbData => {
-          // console.log('dbData on home page: ', dbData)
+          //console.log('dbData on home page: ', dbData)
           this.setState(
             {
               restaurants: dbData
@@ -36,9 +36,7 @@ export class Home extends React.Component {
                 )
               })}
             </ul>
-
           </div>
-          <Link to={'/restaurants'}>Link to Restaurant</Link>
         </div>
       )
     }

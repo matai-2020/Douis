@@ -4,24 +4,13 @@ import React from 'react'
 const { BaseLayer, Overlay } = LayersControl
 
 export class Map extends React.Component {
-//   constructor (props) {
-//     super(props)
-//     //console.log('map props', props.data)
-//   }
-
-  //   const position = [props.lat, props.long]
-
-  //   console.log('props on Map page', props.component)
-
   render () {
     const position = [this.props.data.lat, this.props.data.long]
     console.log('little and friday lat', this.props.data.lat)
     const zoom = 20
-    //console.log(this.props.data.lat)
+    // console.log(this.props.data.lat)
     return (
       <div>
-        {/* {props.component && */}
-
         <div className="leaflet-container fontchange" id="mapid">
 
           <LeafletMap center={position} zoom={zoom}>
@@ -47,9 +36,7 @@ export class Map extends React.Component {
               </Marker>
             </LayersControl>
           </LeafletMap>
-
         </div>
-        {/* } */}
       </div>
     )
   }

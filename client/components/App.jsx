@@ -4,7 +4,6 @@ import { Route } from 'react-router-dom'
 import Home from './Home'
 import Title from './Title'
 import View from './View'
-import Map from './Map'
 
 const App = () => {
   return (
