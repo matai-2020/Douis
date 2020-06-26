@@ -3,41 +3,55 @@ import React from 'react'
 
 const { BaseLayer, Overlay } = LayersControl
 
-const Map = (props) => {
-  const position = [-36.848461, 174.763336]
+export class Map extends React.Component {
+//   constructor (props) {
+//     super(props)
+//     //console.log('map props', props.data)
+//   }
+
   //   const position = [props.lat, props.long]
-  const zoom = 20
-  return (
 
-    <div>
-      <div className="leaflet-container fontchange" id="mapid">
+  //   console.log('props on Map page', props.component)
 
-        <LeafletMap center={position} zoom={zoom}>
-          <LayersControl position="topright">
-            <BaseLayer checked name="OpenStreetMap.HOT">
-              <TileLayer
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                url='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'
-              />
+  render () {
+    const position = [this.props.data.lat, this.props.data.long]
+    console.log('little and friday lat', this.props.data.lat)
+    const zoom = 20
+    //console.log(this.props.data.lat)
+    return (
+      <div>
+        {/* {props.component && */}
 
-            </BaseLayer>
-            <BaseLayer name="OpenStreetMap.BlackAndWhite">
-              <TileLayer
-                attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                url="https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png"
-              />
-            </BaseLayer>
-            <Marker position={position}>
-              <Popup>
-                {/* {props.name} */}
-              </Popup>
+        <div className="leaflet-container fontchange" id="mapid">
 
-            </Marker>
-          </LayersControl>
-        </LeafletMap>
+          <LeafletMap center={position} zoom={zoom}>
+            <LayersControl position="topright">
+              <BaseLayer checked name="OpenStreetMap.HOT">
+                <TileLayer
+                  attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                  url='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'
+                />
 
+              </BaseLayer>
+              <BaseLayer name="OpenStreetMap.BlackAndWhite">
+                <TileLayer
+                  attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png"
+                />
+              </BaseLayer>
+              <Marker position={position}>
+                <Popup>
+                  {this.props.data.name}
+                </Popup>
+
+              </Marker>
+            </LayersControl>
+          </LeafletMap>
+
+        </div>
+        {/* } */}
       </div>
-    </div>
-  )
+    )
+  }
 }
 export default Map

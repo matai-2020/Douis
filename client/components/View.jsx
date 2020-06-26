@@ -11,7 +11,7 @@ export class View extends React.Component {
     this.state = {
       restaurants: []
     }
-    console.log(props)
+    // console.log(props)
   }
 
   componentDidMount () {
@@ -36,16 +36,18 @@ export class View extends React.Component {
 
       <div>
         {restaurant &&
+        <>
                 <div>
                   <h2>{restaurant.name}</h2>
                   <p>Restaurant Rating: {restaurant.rating}</p>
                   <p>Price Range: {restaurant.price}</p>
                 </div>
-        }
 
         <div>
-          <Map />
+          <Map data={restaurant} />
         </div>
+        </>
+        }
         <div>
           <Link to={'/'}>Home</Link>
         </div>
