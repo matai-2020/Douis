@@ -24,4 +24,16 @@ router.post('/add', (req, res) => {
     })
 })
 
+router.put('/:id', (req, res) => {
+  const id = Number(req.params.id)
+  const restaurant = req.body
+  db.updateRes(restaurant, id)
+    .then(updated => {
+      res.json(updated)
+    })
+    .catch(err => {
+      res.status(500).send(err.message)
+    })
+})
+
 module.exports = router
