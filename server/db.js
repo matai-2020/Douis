@@ -4,7 +4,8 @@ const connection = require('knex')(config)
 
 module.exports = {
   getData,
-  addRest
+  addRest,
+  updateRes
 }
 
 function getData (db = connection) {
@@ -28,4 +29,19 @@ function addRest (restaurant, db = connection) {
         ...restaurant
       }
     })
+}
+
+function updateRes (restaurant, id, db = connection) {
+  return db('restaurants')
+    .where('id', id)
+    .update(
+      { name: restaurant.name,
+        rating: restaurant.rating,
+        lat: restaurant.lat,
+        long: restaurant.long,
+        price_range: restaurant.priceRange,
+        image: restaurant.image,
+        type: restaurant.type
+      }
+    )
 }
