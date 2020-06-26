@@ -11,6 +11,7 @@ module.exports = {
 function getData (db = connection) {
   return db('restaurants')
     .select(
+      'id',
       'name',
       'rating',
       'lat',
