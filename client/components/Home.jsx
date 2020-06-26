@@ -11,7 +11,7 @@ export class Home extends React.Component {
     componentDidMount () {
       getData()
         .then(dbData => {
-        //   console.log('dbData on home page: ', dbData)
+          // console.log('dbData on home page: ', dbData)
           this.setState(
             {
               restaurants: dbData
