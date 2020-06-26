@@ -1,6 +1,7 @@
 body {
   text-align: center;
   margin: 0 auto;
+  background-color: bisque;
 }
 
 .title {
@@ -15,13 +16,13 @@ body {
   height: auto;
   max-width: 250px;
   float: right;
-  padding: 5vh 20vw 5vh 5vw;
+  /* padding: 5vh 20vw 5vh 5vw; */
   margin: 10px;
 }
 
 .words {
   float: left;
-  padding: 15vh 5vw 10vh 20vw;
+  /* padding: 15vh 5vw 10vh 20vw; */
   margin: 10px;
 }
 
@@ -30,10 +31,22 @@ body {
   width: 100%;
 }
 
-.description {
-  padding-top: 50vh;
+.container {
+  display:flex;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 5px;
 }
 
-.homebutton {
-  padding: 20px;
+.image {
+  width:300px;
+  height: auto;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.description {
+  padding-top: 40vh;
 }

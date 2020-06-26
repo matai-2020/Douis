@@ -11,7 +11,7 @@ export class Home extends React.Component {
     componentDidMount () {
       getData()
         .then(dbData => {
-          //console.log('dbData on home page: ', dbData)
+          // console.log('dbData on home page: ', dbData)
           this.setState(
             {
               restaurants: dbData
@@ -22,20 +22,18 @@ export class Home extends React.Component {
 
     render () {
       return (
-        <div>
-          <div>
-            <ul>
-              {this.state.restaurants.map(el => {
-                return (
-                  <li key={el.id}>
-                    <Link to={`restaurants/${el.id}`}>
-                      <img src={`images/${el.image}`} />
-                      <h3>{el.name}</h3>
-                    </Link>
-                  </li>
-                )
-              })}
-            </ul>
+        <div className='container'>
+          <div className='content'>
+            {this.state.restaurants.map(el => {
+              return (
+                <div key={el.id}>
+                  <Link to={`restaurants/${el.id}`}>
+                    <img className='image' src={`images/${el.image}`} />
+                    <h3>{el.name}</h3>
+                  </Link>
+                </div>
+              )
+            })}
           </div>
         </div>
       )

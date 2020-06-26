@@ -41,6 +41,7 @@ export class View extends React.Component {
                   <h2>{restaurant.name}</h2>
                   <p>Restaurant Rating: {restaurant.rating}</p>
                   <p>Price Range: {restaurant.priceRange}</p>
+                  <p>Type: {restaurant.kind}</p>
                   <p>Description: {restaurant.description}</p>
                 </div>
 
