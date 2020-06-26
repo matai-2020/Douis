@@ -29,20 +29,29 @@ export class View extends React.Component {
   render () {
     const paramsId = Number(this.props.match.params.id)
 
-    const restaurant = this.state.restaurants.filter(el => el.id === paramsId)
+    const restaurant = this.state.restaurants.find(el => el.id === paramsId)
+
     console.log('restaurant props', restaurant)
     return (
+
       <div>
-        <div>
-          <h2>{name}</h2>
-        </div>
+        {restaurant &&
+                <div>
+                  <h2>{restaurant.name}</h2>
+                  <p>Restaurant Rating: {restaurant.rating}</p>
+                  <p>Price Range: {restaurant.price}</p>
+                </div>
+        }
 
         <div>
           <Map />
         </div>
+        <div>
+          <Link to={'/'}>Home</Link>
+        </div>
 
-        <Link to={'/'}>Home</Link>
       </div>
+
     )
   }
 }
