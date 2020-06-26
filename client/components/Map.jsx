@@ -10,8 +10,6 @@ const Map = (props) => {
   return (
 
     <div>
-      <h3>map</h3>
-
       <div className="leaflet-container fontchange" id="mapid">
 
         <LeafletMap center={position} zoom={zoom}>
