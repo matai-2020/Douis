@@ -9,7 +9,16 @@ module.exports = {
 }
 
 function getData (db = connection) {
-  return db('restaurants').select()
+  return db('restaurants')
+    .select(
+      'name',
+      'rating',
+      'lat',
+      'long',
+      'price_range as priceRange',
+      'image',
+      'type'
+    )
 }
 
 function addRest (restaurant, db = connection) {
