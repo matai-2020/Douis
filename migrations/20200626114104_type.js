@@ -1,12 +1,12 @@
 
 exports.up = function(knex) {
   return knex.schema.table('restaurants', table => {
-    table.string('type')
+    table.string('kind')
   })
 }
 
 exports.down = function(knex) {
   return knex.schema.table('restaurants', table => {
-    table.dropColumn('type')
+    table.dropColumn('kind')
 })
 }

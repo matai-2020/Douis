@@ -18,7 +18,7 @@ function getData (db = connection) {
       'long',
       'price_range as priceRange',
       'image',
-      'type'
+      'kind'
     )
 }
 

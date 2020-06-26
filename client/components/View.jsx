@@ -37,7 +37,7 @@ export class View extends React.Component {
       <div>
         {restaurant &&
         <>
-                <div>
+                <div className='description'>
                   <h2>{restaurant.name}</h2>
                   <p>Restaurant Rating: {restaurant.rating}</p>
                   <p>Price Range: {restaurant.priceRange}</p>
@@ -49,7 +49,7 @@ export class View extends React.Component {
         </div>
         </>
         }
-        <div>
+        <div className='homebutton'>
           <Link to={'/'}>Home</Link>
         </div>
 

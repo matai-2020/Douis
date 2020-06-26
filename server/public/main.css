@@ -14,9 +14,26 @@ body {
   width: 100%;
   height: auto;
   max-width: 250px;
+  float: right;
+  padding: 5vh 20vw 5vh 5vw;
+  margin: 10px;
+}
+
+.words {
+  float: left;
+  padding: 15vh 5vw 10vh 20vw;
+  margin: 10px;
 }
 
 .leaflet-container {
   height: 400px;
   width: 100%;
+}
+
+.description {
+  padding-top: 50vh;
+}
+
+.homebutton {
+  padding: 20px;
 }
